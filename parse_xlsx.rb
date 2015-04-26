@@ -1,6 +1,6 @@
 prequire 'roo'
 
-abort("usage: ruby parse_elsx.rb <.xlsx>") if ARGV.size == 1
+abort("usage: ruby parse_xlsx.rb <.xlsx>") if ARGV.size == 1
 
 s = Roo::Excelx.new(ARGV[0])  # .xlsx を読み込むときは Roo::Excelx.new                                                  
 s.each do |arr|
