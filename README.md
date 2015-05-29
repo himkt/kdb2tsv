@@ -1,14 +1,12 @@
 # kdb scraper
 
+## install required gems
+
 ```ruby
 bundle install --path vendor/bundle
 ```
 
-### Notice!!!!!
-
-This readme is under construction. If you need README, please take a while...
-
-
+## run
 
 ```ruby
 # This is not recent !!!
