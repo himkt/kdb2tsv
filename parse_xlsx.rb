@@ -1,19 +1,21 @@
-prequire 'roo'
+require 'roo'
 
-abort("usage: ruby parse_xlsx.rb <.xlsx>") if ARGV.size == 1
+abort("usage: ruby parse_xlsx.rb <.xlsx>") if ARGV.size != 1
+
+out = open("subjects.tsv","w")
 
 s = Roo::Excelx.new(ARGV[0])  # .xlsx を読み込むときは Roo::Excelx.new                                                  
-s.each do |arr|
-  p arr
-  arr.each do |item|
-    if item.instance_of? Date
-      item = "#{item}\t"
-    elsif item != nil
-      item = "#{item.to_s.gsub(/\n/, '')}\t"
-    else
-      item = "#{item}\t"
+s.each_with_index do |arr, index|
+  next if index <= 3
+  record = []
+  arr.each_with_index do |item, index|
+    next if index == 2 || index == 14
+    if item != nil
+      item = "#{item.to_s.gsub(/\n/, '')}"
     end
-    print item
+    record.push(item)
   end
-  print "\n"
+  out.puts record.join("\t").sub(/\t$/,'')
 end
+
+out.close
