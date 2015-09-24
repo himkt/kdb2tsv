@@ -1,4 +1,4 @@
-# kdb scraper
+# kdb2tsv
 
 ## install required gems
 
@@ -10,5 +10,5 @@ bundle install --path vendor/bundle
 
 ```ruby
 # This is not recent !!!
-bundle exec ruby parse_xlsx.rb <.XLSX FILE>
+bundle exec ruby kdb2tsv.rb <.XLSX FILE>
 ```
