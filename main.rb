@@ -4,7 +4,7 @@ abort("usage: ruby parse_xlsx.rb <.xlsx>") if ARGV.size != 1
 
 out = open("subjects.tsv","w")
 
-s = Roo::Excelx.new(ARGV[0])  # .xlsx を読み込むときは Roo::Excelx.new                                                  
+s = Roo::Excelx.new(ARGV[0])  # .xlsx を読み込むときは Roo::Excelx.new
 s.each_with_index do |arr, index|
   next if index <= 3
   record = []
